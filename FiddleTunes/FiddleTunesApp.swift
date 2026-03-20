@@ -9,12 +9,18 @@ struct FiddleTunesApp: App {
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([Tune.self])
-        let config = ModelConfiguration(
-            schema: schema,
-            cloudKitDatabase: .private("iCloud.com.iancurry.fiddletunes")
-        )
+        // Try CloudKit-backed store first; fall back to local if container isn't provisioned yet.
+        if let container = try? ModelContainer(
+            for: schema,
+            configurations: [ModelConfiguration(
+                schema: schema,
+                cloudKitDatabase: .private("iCloud.com.iancurry.fiddletunes")
+            )]
+        ) {
+            return container
+        }
         do {
-            return try ModelContainer(for: schema, configurations: [config])
+            return try ModelContainer(for: schema, configurations: [ModelConfiguration(schema: schema)])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
