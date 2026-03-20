@@ -20,12 +20,14 @@ final class AudioService: NSObject, ObservableObject {
     // MARK: - AVAudioSession
 
     private func setupSession() {
+        #if os(iOS)
         do {
             try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: [.defaultToSpeaker])
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print("AudioService: session setup failed: \(error)")
         }
+        #endif
     }
 
     // MARK: - Waveform Sampling (static — testable without AVFoundation)
