@@ -27,7 +27,7 @@ struct FilterPanelView: View {
     private func chipRow(label: String, options: [String], selection: Binding<String?>) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(label)
-                .font(.custom("Manrope", size: 11))
+                .font(.system(size: 11))
                 .fontWeight(.semibold)
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
                 .padding(.horizontal, 16)
@@ -52,7 +52,7 @@ struct FilterPanelView: View {
     private func chip(_ title: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(title)
-                .font(.custom("Manrope", size: 13))
+                .font(.system(size: 13))
                 .fontWeight(isSelected ? .semibold : .regular)
                 .foregroundStyle(isSelected ? Color.white : Color("AppOnSurface"))
                 .padding(.horizontal, 14)

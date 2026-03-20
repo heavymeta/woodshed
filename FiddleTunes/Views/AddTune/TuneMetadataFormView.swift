@@ -29,13 +29,13 @@ struct TuneMetadataFormView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 Text("Tune Details")
-                    .font(.custom("NotoSerif-Bold", size: 22))
+                    .font(.system(size: 22, weight: .bold, design: .serif))
                     .foregroundStyle(Color("AppOnSurface"))
                     .padding(.top, 8)
 
                 formField("Title") {
                     TextField("e.g. Midnight on the Water", text: $title)
-                        .font(.custom("Manrope", size: 16))
+                        .font(.system(size: 16))
                 }
 
                 pickerField("Genre", selection: $genre, options: genres)
@@ -46,7 +46,7 @@ struct TuneMetadataFormView: View {
                 formField("Mnemonic Prompt") {
                     TextField("Describe an image to help you remember this tune...",
                               text: $mnemonicPrompt, axis: .vertical)
-                        .font(.custom("Manrope", size: 15))
+                        .font(.system(size: 15))
                         .lineLimit(3...6)
                 }
 
@@ -59,7 +59,7 @@ struct TuneMetadataFormView: View {
                                 .tint(.white)
                         } else {
                             Text("Save Tune")
-                                .font(.custom("Manrope", size: 17))
+                                .font(.system(size: 17))
                                 .fontWeight(.semibold)
                         }
                     }
@@ -82,7 +82,7 @@ struct TuneMetadataFormView: View {
     private func formField<Content: View>(_ label: String, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(label)
-                .font(.custom("Manrope", size: 12))
+                .font(.system(size: 12))
                 .fontWeight(.semibold)
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
             content()
@@ -95,7 +95,7 @@ struct TuneMetadataFormView: View {
     private func pickerField(_ label: String, selection: Binding<String>, options: [String]) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(label)
-                .font(.custom("Manrope", size: 12))
+                .font(.system(size: 12))
                 .fontWeight(.semibold)
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
             Picker(label, selection: selection) {

@@ -16,7 +16,7 @@ struct RecordAudioView: View {
     var body: some View {
         VStack(spacing: 24) {
             Text("Add Tune")
-                .font(.custom("NotoSerif-Bold", size: 24))
+                .font(.system(size: 24, weight: .bold, design: .serif))
                 .foregroundStyle(Color("AppOnSurface"))
                 .padding(.top, 8)
 
@@ -68,7 +68,7 @@ struct RecordAudioView: View {
                 }
             }
             Text("Tap to Record")
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
         }
     }
@@ -93,7 +93,7 @@ struct RecordAudioView: View {
             .onTapGesture { stopRecording() }
 
             Text("Recording...")
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .foregroundStyle(.red)
 
             // Animated placeholder waveform
@@ -117,7 +117,7 @@ struct RecordAudioView: View {
                     capturedWaveform = []
                     recordingState = .idle
                 }
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
@@ -127,7 +127,7 @@ struct RecordAudioView: View {
                 Button("Use This") {
                     onRecordingComplete("temp_recording.m4a", capturedWaveform)
                 }
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
                 .padding(.horizontal, 20)
@@ -144,7 +144,7 @@ struct RecordAudioView: View {
         HStack {
             Rectangle().fill(Color("AppOutlineVariant")).frame(height: 1)
             Text("or")
-                .font(.custom("Manrope", size: 14))
+                .font(.system(size: 14))
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
                 .padding(.horizontal, 8)
             Rectangle().fill(Color("AppOutlineVariant")).frame(height: 1)
@@ -156,7 +156,7 @@ struct RecordAudioView: View {
             showImportPicker = true
         } label: {
             Label("Import Audio File", systemImage: "square.and.arrow.down")
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .foregroundStyle(Color("AppPrimary"))
                 .padding(.horizontal, 20)
                 .padding(.vertical, 12)

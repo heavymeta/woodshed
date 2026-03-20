@@ -29,13 +29,13 @@ struct FlashcardCardView: View {
             // Text + controls
             VStack(spacing: 6) {
                 Text(tune.title)
-                    .font(.custom("NotoSerif-Bold", size: 20))
+                    .font(.system(size: 20, weight: .bold, design: .serif))
                     .foregroundStyle(Color("AppOnSurface"))
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
 
                 Text([tune.type, tune.key, tune.tuning].joined(separator: " · "))
-                    .font(.custom("Manrope", size: 13))
+                    .font(.system(size: 13))
                     .foregroundStyle(Color("AppOnSurfaceVariant"))
 
                 Button {

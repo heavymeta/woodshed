@@ -17,10 +17,10 @@ struct TunePlayerView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(tune.title)
-                        .font(.custom("NotoSerif-Bold", size: 22))
+                        .font(.system(size: 22, weight: .bold, design: .serif))
                         .foregroundStyle(Color("AppOnSurface"))
                     Text([tune.type, tune.key, tune.tuning].joined(separator: " · "))
-                        .font(.custom("Manrope", size: 13))
+                        .font(.system(size: 13))
                         .foregroundStyle(Color("AppOnSurfaceVariant"))
                 }
                 Spacer()
@@ -49,7 +49,7 @@ struct TunePlayerView: View {
                     // Speed picker
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Speed")
-                            .font(.custom("Manrope", size: 12))
+                            .font(.system(size: 12))
                             .foregroundStyle(Color("AppOnSurfaceVariant"))
                             .padding(.horizontal, 20)
 

@@ -84,7 +84,7 @@ struct FlashcardsView: View {
             HStack {
                 if offset < 0 {
                     Text("DON'T KNOW")
-                        .font(.custom("Manrope", size: 18))
+                        .font(.system(size: 18))
                         .fontWeight(.bold)
                         .foregroundStyle(.red)
                         .padding(10)
@@ -96,7 +96,7 @@ struct FlashcardsView: View {
                 } else {
                     Spacer()
                     Text("KNOW IT")
-                        .font(.custom("Manrope", size: 18))
+                        .font(.system(size: 18))
                         .fontWeight(.bold)
                         .foregroundStyle(.green)
                         .padding(10)
@@ -122,7 +122,7 @@ struct FlashcardsView: View {
                         .font(.system(size: 44))
                         .foregroundStyle(.red)
                     Text("Don't Know")
-                        .font(.custom("Manrope", size: 12))
+                        .font(.system(size: 12))
                         .foregroundStyle(Color("AppOnSurfaceVariant"))
                 }
             }
@@ -135,7 +135,7 @@ struct FlashcardsView: View {
                         .font(.system(size: 44))
                         .foregroundStyle(.green)
                     Text("Know It")
-                        .font(.custom("Manrope", size: 12))
+                        .font(.system(size: 12))
                         .foregroundStyle(Color("AppOnSurfaceVariant"))
                 }
             }
@@ -150,7 +150,7 @@ struct FlashcardsView: View {
                 .font(.system(size: 48))
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
             Text("Add tunes to your library\nto start practicing.")
-                .font(.custom("NotoSerif-Regular", size: 16))
+                .font(.system(size: 16, design: .serif))
                 .foregroundStyle(Color("AppOnSurface"))
                 .multilineTextAlignment(.center)
         }
@@ -159,13 +159,13 @@ struct FlashcardsView: View {
     private var allDoneState: some View {
         VStack(spacing: 16) {
             Text("All done!")
-                .font(.custom("NotoSerif-Bold", size: 28))
+                .font(.system(size: 28, weight: .bold, design: .serif))
                 .foregroundStyle(Color("AppOnSurface"))
             Text("Great practice session.")
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
             Button("Start Over") { rebuildDeck() }
-                .font(.custom("Manrope", size: 16))
+                .font(.system(size: 16))
                 .fontWeight(.semibold)
                 .foregroundStyle(Color("AppPrimary"))
                 .padding(.horizontal, 24)

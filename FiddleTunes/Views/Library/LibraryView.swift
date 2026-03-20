@@ -85,10 +85,10 @@ struct LibraryView: View {
         VStack(spacing: 12) {
             Spacer()
             Text("No tunes yet.")
-                .font(.custom("NotoSerif-Regular", size: 18))
+                .font(.system(size: 18, design: .serif))
                 .foregroundStyle(Color("AppOnSurface"))
             Text("Tap + to add your first tune.")
-                .font(.custom("NotoSerif-Regular", size: 14))
+                .font(.system(size: 14, design: .serif))
                 .foregroundStyle(Color("AppOnSurfaceVariant"))
             Spacer()
         }

@@ -65,7 +65,7 @@
 		8DA18BD1E487A6BC8C1C01DD /* ImageGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationService.swift; sourceTree = "<group>"; };
 		8E7A0D623A34B9C66304FFD1 /* FlashcardWeighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardWeighting.swift; sourceTree = "<group>"; };
 		982955CA7251580BA7F484D0 /* AddTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTuneView.swift; sourceTree = "<group>"; };
-		B57489C46A218DBE9C605BB3 /* FiddleTunes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FiddleTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B57489C46A218DBE9C605BB3 /* FiddleTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiddleTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E4BC3BB1B06721109A5B0 /* TuneMetadataFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneMetadataFormView.swift; sourceTree = "<group>"; };
 		E50EBB7824A5AAFB8123330C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		ED709F64D033EEDD99EF9DD4 /* FlashcardWeightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardWeightingTests.swift; sourceTree = "<group>"; };
@@ -264,11 +264,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
-				TargetAttributes = {
-					13338075EA49611124E6D410 = {
-						DevelopmentTeam = "";
-					};
-				};
 			};
 			buildConfigurationList = 1648A6C29965378771BB74CF /* Build configuration list for PBXProject "FiddleTunes" */;
 			developmentRegion = en;
@@ -344,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FiddleTunes/FiddleTunes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DJC4K4PF8U;
 				INFOPLIST_FILE = FiddleTunes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,7 +496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FiddleTunes/FiddleTunes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DJC4K4PF8U;
 				INFOPLIST_FILE = FiddleTunes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

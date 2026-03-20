@@ -10,19 +10,19 @@ struct TuneRowView: View {
         HStack(spacing: 12) {
             // Index number
             Text("\(index + 1)")
-                .font(.custom("NotoSerif-Bold", size: 18))
+                .font(.system(size: 18, weight: .bold, design: .serif))
                 .foregroundStyle(Color("AppPrimary"))
                 .frame(width: 32, alignment: .trailing)
 
             // Title + subtitle
             VStack(alignment: .leading, spacing: 2) {
                 Text(tune.title)
-                    .font(.custom("NotoSerif-Bold", size: 16))
+                    .font(.system(size: 16, weight: .bold, design: .serif))
                     .foregroundStyle(Color("AppOnSurface"))
                     .lineLimit(1)
 
                 Text([tune.type, tune.key, tune.tuning].joined(separator: " · "))
-                    .font(.custom("Manrope", size: 12))
+                    .font(.system(size: 12))
                     .foregroundStyle(Color("AppOnSurfaceVariant"))
                     .lineLimit(1)
             }
