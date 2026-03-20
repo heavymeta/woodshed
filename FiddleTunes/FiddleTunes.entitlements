@@ -10,7 +10,5 @@
     <array>
         <string>CloudKit</string>
     </array>
-    <key>com.apple.developer.cloudkit-environment</key>
-    <string>development</string>
 </dict>
 </plist>
