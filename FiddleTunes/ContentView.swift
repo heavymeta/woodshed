@@ -44,10 +44,6 @@ struct ContentView: View {
 
 // MARK: - Stubs (replaced by later tasks)
 
-struct FlashcardsView: View {
-    var body: some View { Text("Flashcards") }
-}
-
 struct AddTuneView: View {
     var body: some View { Text("Add Tune") }
 }
