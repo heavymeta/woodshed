@@ -72,4 +72,121 @@ final class AudioService: NSObject, ObservableObject {
         let samples = Array(UnsafeBufferPointer(start: channelData, count: Int(buffer.frameLength)))
         return AudioService.normalize(samples: samples, targetCount: 50)
     }
+
+    // MARK: - Recording
+
+    private var tempRecordingURL: URL {
+        FileManager.default.temporaryDirectory.appendingPathComponent("temp_recording.m4a")
+    }
+
+    func startRecording() throws {
+        let settings: [String: Any] = [
+            AVFormatIDKey: kAudioFormatMPEG4AAC,
+            AVSampleRateKey: 44100.0,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        recorder = try AVAudioRecorder(url: tempRecordingURL, settings: settings)
+        recorder?.delegate = self
+        recorder?.record()
+        isRecording = true
+    }
+
+    /// Stops recording and returns the waveform samples. Call `saveRecording(named:)` to persist.
+    func stopRecording() -> [Float] {
+        recorder?.stop()
+        isRecording = false
+        return sampleWaveform(from: tempRecordingURL)
+    }
+
+    /// Moves the temp recording to the Documents directory. Returns the filename.
+    @discardableResult
+    func saveRecording(named filename: String) throws -> String {
+        let dest = documentsURL(for: filename)
+        if FileManager.default.fileExists(atPath: dest.path) {
+            try FileManager.default.removeItem(at: dest)
+        }
+        try FileManager.default.moveItem(at: tempRecordingURL, to: dest)
+        return filename
+    }
+
+    func cancelRecording() {
+        recorder?.stop()
+        recorder?.deleteRecording()
+        isRecording = false
+    }
+
+    // MARK: - Playback
+
+    func play(filename: String, rate: Float = 1.0) throws {
+        // Stop recorder if active
+        if isRecording { cancelRecording() }
+        // Stop current player
+        player?.stop()
+
+        let url = documentsURL(for: filename)
+        player = try AVAudioPlayer(contentsOf: url)
+        player?.enableRate = true
+        player?.prepareToPlay()
+        player?.rate = rate
+        player?.delegate = self
+        player?.play()
+        isPlaying = true
+    }
+
+    func stop() {
+        player?.stop()
+        isPlaying = false
+    }
+
+    func seek(by seconds: TimeInterval) {
+        guard let player else { return }
+        let newTime = max(0, min(player.duration, player.currentTime + seconds))
+        player.currentTime = newTime
+    }
+
+    func setRate(_ rate: Float) {
+        player?.rate = rate
+    }
+
+    // MARK: - Import
+
+    func importAudio(from sourceURL: URL) throws -> (filename: String, waveform: [Float]) {
+        let filename = UUID().uuidString + "." + sourceURL.pathExtension
+        let dest = documentsURL(for: filename)
+        try FileManager.default.copyItem(at: sourceURL, to: dest)
+        let waveform = sampleWaveform(from: dest)
+        return (filename, waveform)
+    }
+
+    // MARK: - Delete
+
+    func deleteAudioFile(named filename: String) {
+        let url = documentsURL(for: filename)
+        try? FileManager.default.removeItem(at: url)
+    }
+
+    // MARK: - Helpers
+
+    private func documentsURL(for filename: String) -> URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent(filename)
+    }
+}
+
+// MARK: - Delegates
+
+extension AudioService: AVAudioPlayerDelegate {
+    nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        Task { @MainActor in self.isPlaying = false }
+    }
+}
+
+extension AudioService: AVAudioRecorderDelegate {
+    nonisolated func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
+        Task { @MainActor in
+            self.isRecording = false
+            // Error surfaced via isRecording state change; caller observes via @Published
+        }
+    }
 }
