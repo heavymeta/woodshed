@@ -12,9 +12,5 @@
     </array>
     <key>com.apple.developer.cloudkit-environment</key>
     <string>development</string>
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>remote-notification</string>
-    </array>
 </dict>
 </plist>

@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2601952DF7FE1B9B7E402EE5 /* FiddleTunesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A053701D6D0F773E48B609 /* FiddleTunesTests.swift */; };
+		3D5DF18C7B9AB7836CD2C0A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF03D854CC41315AAB180B1 /* AVFoundation.framework */; };
 		847D6FE0B6B345C763CC790C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F18B2CCC3323725E473D3 /* ContentView.swift */; };
 		8AC6D7D589CA55625AB1396A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C3253F1727D394073B7155 /* CloudKit.framework */; };
-		90A455D4E093430751CA51A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82A732F36550D69F72AC7D63 /* Assets.xcassets */; };
 		9374EC1935413ED1941446A8 /* FiddleTunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1C330BA143B60774C14E6 /* FiddleTunesApp.swift */; };
-		B8CD5CEE235026A6E7FC6DBF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17F6A2D126298DB0DA792BF1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,14 +25,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17F6A2D126298DB0DA792BF1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1EF03D854CC41315AAB180B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		226F18B2CCC3323725E473D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31C3253F1727D394073B7155 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3CB9045B97CA69E37ADDCBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		43A053701D6D0F773E48B609 /* FiddleTunesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiddleTunesTests.swift; sourceTree = "<group>"; };
 		4BD1C330BA143B60774C14E6 /* FiddleTunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiddleTunesApp.swift; sourceTree = "<group>"; };
 		7C2E22F8C5F6B15CBBDEA134 /* FiddleTunes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FiddleTunes.entitlements; sourceTree = "<group>"; };
-		82A732F36550D69F72AC7D63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B57489C46A218DBE9C605BB3 /* FiddleTunes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FiddleTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92F7608DE0F61EA43D0E775 /* FiddleTunesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FiddleTunesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -44,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AC6D7D589CA55625AB1396A /* CloudKit.framework in Frameworks */,
+				3D5DF18C7B9AB7836CD2C0A9 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +56,6 @@
 				7C2E22F8C5F6B15CBBDEA134 /* FiddleTunes.entitlements */,
 				4BD1C330BA143B60774C14E6 /* FiddleTunesApp.swift */,
 				3CB9045B97CA69E37ADDCBA7 /* Info.plist */,
-				40E444ADCA2C248D3260A783 /* Resources */,
 			);
 			path = FiddleTunes;
 			sourceTree = "<group>";
@@ -72,23 +70,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		40E444ADCA2C248D3260A783 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				82A732F36550D69F72AC7D63 /* Assets.xcassets */,
-				70A251D28FE58BE9B4ACFA8F /* Fonts */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		70A251D28FE58BE9B4ACFA8F /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				17F6A2D126298DB0DA792BF1 /* README.md */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		AF04D96BA8EBDD83341DFAA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +82,7 @@
 		E6EBF703E35BB36CC2627296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EF03D854CC41315AAB180B1 /* AVFoundation.framework */,
 				31C3253F1727D394073B7155 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -122,7 +104,6 @@
 			buildConfigurationList = FC23C447581D602022BED063 /* Build configuration list for PBXNativeTarget "FiddleTunes" */;
 			buildPhases = (
 				4E7D3D8B0937EFEB0A50FF97 /* Sources */,
-				9A388B20AE37CD06BE6797B4 /* Resources */,
 				17539AC9BD9D8DE9ED1FBE1B /* Frameworks */,
 			);
 			buildRules = (
@@ -187,18 +168,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		9A388B20AE37CD06BE6797B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90A455D4E093430751CA51A5 /* Assets.xcassets in Resources */,
-				B8CD5CEE235026A6E7FC6DBF /* README.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E7D3D8B0937EFEB0A50FF97 /* Sources */ = {
