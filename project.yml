@@ -1,0 +1,59 @@
+name: FiddleTunes
+options:
+  bundleIdPrefix: com.iancurry
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+
+packages: {}
+
+targets:
+  FiddleTunes:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - FiddleTunes
+    resources:
+      - path: FiddleTunes/Resources
+    info:
+      path: FiddleTunes/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSMicrophoneUsageDescription: "FiddleTunes needs microphone access to record your fiddle playing."
+        UIAppFonts:
+          - NotoSerif-Regular.ttf
+          - NotoSerif-Bold.ttf
+          - NotoSerif-Italic.ttf
+          - Manrope-VariableFont_wght.ttf
+          - "MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"
+    entitlements:
+      path: FiddleTunes/FiddleTunes.entitlements
+    settings:
+      SWIFT_VERSION: "5.9"
+      TARGETED_DEVICE_FAMILY: "1"
+      DEVELOPMENT_TEAM: ""  # user fills in
+    dependencies:
+      - sdk: CloudKit.framework
+    capabilities:
+      iCloud:
+        cloudKit: true
+        containers:
+          - iCloud.com.iancurry.fiddletunes
+      backgroundModes:
+        modes:
+          - remote-notification
+
+  FiddleTunesTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - FiddleTunesTests
+    dependencies:
+      - target: FiddleTunes
+    settings:
+      SWIFT_VERSION: "5.9"
