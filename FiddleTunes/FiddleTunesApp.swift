@@ -35,7 +35,10 @@ struct FiddleTunesApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(AudioService.shared)
-                .onAppear { checkAPIKey() }
+                .onAppear {
+                    checkAPIKey()
+                    SeedService.seedIfNeeded(context: sharedModelContainer.mainContext)
+                }
                 .alert("OpenAI API Key", isPresented: $showAPIKeyAlert) {
                     TextField("sk-...", text: $pendingAPIKey)
                         .autocorrectionDisabled()

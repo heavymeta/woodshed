@@ -15,6 +15,7 @@
 		36E8906888AAE47526B11DB9 /* AddTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982955CA7251580BA7F484D0 /* AddTuneView.swift */; };
 		3D5DF18C7B9AB7836CD2C0A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF03D854CC41315AAB180B1 /* AVFoundation.framework */; };
 		42B3137BA5C51D51C7946002 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD99E4CF641E03781DF89 /* WaveformView.swift */; };
+		46C31A3112B448495FEB9086 /* SeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838017B9D73207A639AC9799 /* SeedService.swift */; };
 		4C8493E21228CDB54A10810C /* ImageGenerationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357314932D0CC2E6D0F0BD2 /* ImageGenerationServiceTests.swift */; };
 		544BD836B66FBA58F647EF15 /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6B7B4B023BBDF45F3ED01 /* KeychainServiceTests.swift */; };
 		560F6AF35C9401EBEFAE2D4D /* RecordAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEECD789E13A720FC98B69 /* RecordAudioView.swift */; };
@@ -62,10 +63,11 @@
 		7C2E22F8C5F6B15CBBDEA134 /* FiddleTunes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FiddleTunes.entitlements; sourceTree = "<group>"; };
 		7D99802A25E95F027158E21F /* FlashcardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCardView.swift; sourceTree = "<group>"; };
 		8357314932D0CC2E6D0F0BD2 /* ImageGenerationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationServiceTests.swift; sourceTree = "<group>"; };
+		838017B9D73207A639AC9799 /* SeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedService.swift; sourceTree = "<group>"; };
 		8DA18BD1E487A6BC8C1C01DD /* ImageGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationService.swift; sourceTree = "<group>"; };
 		8E7A0D623A34B9C66304FFD1 /* FlashcardWeighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardWeighting.swift; sourceTree = "<group>"; };
 		982955CA7251580BA7F484D0 /* AddTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTuneView.swift; sourceTree = "<group>"; };
-		B57489C46A218DBE9C605BB3 /* FiddleTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiddleTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B57489C46A218DBE9C605BB3 /* FiddleTunes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FiddleTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E4BC3BB1B06721109A5B0 /* TuneMetadataFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneMetadataFormView.swift; sourceTree = "<group>"; };
 		E50EBB7824A5AAFB8123330C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		ED709F64D033EEDD99EF9DD4 /* FlashcardWeightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardWeightingTests.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				F010CBED313155C1312132C7 /* AudioService.swift */,
 				8DA18BD1E487A6BC8C1C01DD /* ImageGenerationService.swift */,
 				2FEC0C15DEFCB5E4D76CA21E /* KeychainService.swift */,
+				838017B9D73207A639AC9799 /* SeedService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -264,6 +267,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					13338075EA49611124E6D410 = {
+						DevelopmentTeam = "";
+					};
+				};
 			};
 			buildConfigurationList = 1648A6C29965378771BB74CF /* Build configuration list for PBXProject "FiddleTunes" */;
 			developmentRegion = en;
@@ -302,6 +310,7 @@
 				61C984D32DB2E4B6C53C5591 /* KeychainService.swift in Sources */,
 				2682AFA9A849B0BB9E73C00B /* LibraryView.swift in Sources */,
 				560F6AF35C9401EBEFAE2D4D /* RecordAudioView.swift in Sources */,
+				46C31A3112B448495FEB9086 /* SeedService.swift in Sources */,
 				963A2B1BB9657DC98735F7D7 /* Tune.swift in Sources */,
 				D5D914C1AAC0201FF1706FFB /* TuneMetadataFormView.swift in Sources */,
 				F42348BBCC4DF9BBF8F80302 /* TunePlayerView.swift in Sources */,
@@ -339,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FiddleTunes/FiddleTunes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = DJC4K4PF8U;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FiddleTunes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FiddleTunes/FiddleTunes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = DJC4K4PF8U;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FiddleTunes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
