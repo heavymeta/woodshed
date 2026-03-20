@@ -7,11 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01E2FE40800E77580A347363 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010CBED313155C1312132C7 /* AudioService.swift */; };
+		06D5DCFACC6BE165A7495879 /* AudioServiceWaveformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2D7FAB33D0EB639012629 /* AudioServiceWaveformTests.swift */; };
+		0FB937E23F0B2C3B298E91BC /* FlashcardWeighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0D623A34B9C66304FFD1 /* FlashcardWeighting.swift */; };
 		2601952DF7FE1B9B7E402EE5 /* FiddleTunesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A053701D6D0F773E48B609 /* FiddleTunesTests.swift */; };
+		2682AFA9A849B0BB9E73C00B /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EBB7824A5AAFB8123330C /* LibraryView.swift */; };
+		36E8906888AAE47526B11DB9 /* AddTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982955CA7251580BA7F484D0 /* AddTuneView.swift */; };
 		3D5DF18C7B9AB7836CD2C0A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF03D854CC41315AAB180B1 /* AVFoundation.framework */; };
+		42B3137BA5C51D51C7946002 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD99E4CF641E03781DF89 /* WaveformView.swift */; };
+		4C8493E21228CDB54A10810C /* ImageGenerationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357314932D0CC2E6D0F0BD2 /* ImageGenerationServiceTests.swift */; };
+		53DEC7883A50A3E3469ACD38 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA76A9969CFBD3F531E684 /* AudioService.swift */; };
+		544BD836B66FBA58F647EF15 /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6B7B4B023BBDF45F3ED01 /* KeychainServiceTests.swift */; };
+		560F6AF35C9401EBEFAE2D4D /* RecordAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEECD789E13A720FC98B69 /* RecordAudioView.swift */; };
+		612F5F1609757338BD76C875 /* FlashcardWeightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED709F64D033EEDD99EF9DD4 /* FlashcardWeightingTests.swift */; };
+		61C984D32DB2E4B6C53C5591 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC0C15DEFCB5E4D76CA21E /* KeychainService.swift */; };
+		73F407E59C854E001C0BF6F2 /* TuneRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C541E81B0BFF2B4B45752D8 /* TuneRowView.swift */; };
+		7CF0CC52676AEF3FFF9D05C6 /* FilterPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477F2739C5164ADB38C08D07 /* FilterPanelView.swift */; };
+		7FDEAA40B8EA61DC87E96E98 /* FlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44351D48D8D435B184444497 /* FlashcardsView.swift */; };
+		829465CEE6C0244E3BB15DC6 /* FlashcardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99802A25E95F027158E21F /* FlashcardCardView.swift */; };
 		847D6FE0B6B345C763CC790C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F18B2CCC3323725E473D3 /* ContentView.swift */; };
 		8AC6D7D589CA55625AB1396A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C3253F1727D394073B7155 /* CloudKit.framework */; };
 		9374EC1935413ED1941446A8 /* FiddleTunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1C330BA143B60774C14E6 /* FiddleTunesApp.swift */; };
+		963A2B1BB9657DC98735F7D7 /* Tune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FDFC3517AF62335DE6F19F /* Tune.swift */; };
+		B176A3F011EB19103F7303AA /* ImageGenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA18BD1E487A6BC8C1C01DD /* ImageGenerationService.swift */; };
+		BB6FEC09CBD69BF06DDAA7CC /* Tune.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C522E00B05FCB99B894E3 /* Tune.swift */; };
+		CABD61BF6C077BF2B8ED793B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA002FB04291FB25D124DB33 /* KeychainService.swift */; };
+		D5D914C1AAC0201FF1706FFB /* TuneMetadataFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E4BC3BB1B06721109A5B0 /* TuneMetadataFormView.swift */; };
+		F42348BBCC4DF9BBF8F80302 /* TunePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1EB40F40C7BA458ADFC45D /* TunePlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,12 +49,34 @@
 /* Begin PBXFileReference section */
 		1EF03D854CC41315AAB180B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		226F18B2CCC3323725E473D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2BBEECD789E13A720FC98B69 /* RecordAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioView.swift; sourceTree = "<group>"; };
+		2EAA76A9969CFBD3F531E684 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		2FEC0C15DEFCB5E4D76CA21E /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		31C3253F1727D394073B7155 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		33FDFC3517AF62335DE6F19F /* Tune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune.swift; sourceTree = "<group>"; };
+		3C1EB40F40C7BA458ADFC45D /* TunePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunePlayerView.swift; sourceTree = "<group>"; };
+		3C541E81B0BFF2B4B45752D8 /* TuneRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneRowView.swift; sourceTree = "<group>"; };
 		3CB9045B97CA69E37ADDCBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		43A053701D6D0F773E48B609 /* FiddleTunesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiddleTunesTests.swift; sourceTree = "<group>"; };
+		44351D48D8D435B184444497 /* FlashcardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsView.swift; sourceTree = "<group>"; };
+		477F2739C5164ADB38C08D07 /* FilterPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPanelView.swift; sourceTree = "<group>"; };
 		4BD1C330BA143B60774C14E6 /* FiddleTunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiddleTunesApp.swift; sourceTree = "<group>"; };
+		75BCD99E4CF641E03781DF89 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
+		7AD6B7B4B023BBDF45F3ED01 /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
 		7C2E22F8C5F6B15CBBDEA134 /* FiddleTunes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FiddleTunes.entitlements; sourceTree = "<group>"; };
+		7D99802A25E95F027158E21F /* FlashcardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCardView.swift; sourceTree = "<group>"; };
+		8357314932D0CC2E6D0F0BD2 /* ImageGenerationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationServiceTests.swift; sourceTree = "<group>"; };
+		8DA18BD1E487A6BC8C1C01DD /* ImageGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationService.swift; sourceTree = "<group>"; };
+		8E7A0D623A34B9C66304FFD1 /* FlashcardWeighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardWeighting.swift; sourceTree = "<group>"; };
+		982955CA7251580BA7F484D0 /* AddTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTuneView.swift; sourceTree = "<group>"; };
 		B57489C46A218DBE9C605BB3 /* FiddleTunes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FiddleTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA002FB04291FB25D124DB33 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		DA3E4BC3BB1B06721109A5B0 /* TuneMetadataFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneMetadataFormView.swift; sourceTree = "<group>"; };
+		E50EBB7824A5AAFB8123330C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		E58C522E00B05FCB99B894E3 /* Tune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune.swift; sourceTree = "<group>"; };
+		ED709F64D033EEDD99EF9DD4 /* FlashcardWeightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardWeightingTests.swift; sourceTree = "<group>"; };
+		F010CBED313155C1312132C7 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		F4A2D7FAB33D0EB639012629 /* AudioServiceWaveformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioServiceWaveformTests.swift; sourceTree = "<group>"; };
 		F92F7608DE0F61EA43D0E775 /* FiddleTunesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FiddleTunesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,12 +96,46 @@
 		15732588AE09872D303783E0 /* FiddleTunes */ = {
 			isa = PBXGroup;
 			children = (
+				2EAA76A9969CFBD3F531E684 /* AudioService.swift */,
 				226F18B2CCC3323725E473D3 /* ContentView.swift */,
 				7C2E22F8C5F6B15CBBDEA134 /* FiddleTunes.entitlements */,
 				4BD1C330BA143B60774C14E6 /* FiddleTunesApp.swift */,
 				3CB9045B97CA69E37ADDCBA7 /* Info.plist */,
+				BA002FB04291FB25D124DB33 /* KeychainService.swift */,
+				E58C522E00B05FCB99B894E3 /* Tune.swift */,
+				281E47359E35F695AB9E065A /* Helpers */,
+				B887BDD395AAB6F8F272B756 /* Models */,
+				24ABBBDC7F3002D91456D2F4 /* Services */,
+				C3AC5B73B7C7FCE7D60020C3 /* Views */,
 			);
 			path = FiddleTunes;
+			sourceTree = "<group>";
+		};
+		158DCDD42C65066966A9C659 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				3C1EB40F40C7BA458ADFC45D /* TunePlayerView.swift */,
+				75BCD99E4CF641E03781DF89 /* WaveformView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		24ABBBDC7F3002D91456D2F4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F010CBED313155C1312132C7 /* AudioService.swift */,
+				8DA18BD1E487A6BC8C1C01DD /* ImageGenerationService.swift */,
+				2FEC0C15DEFCB5E4D76CA21E /* KeychainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		281E47359E35F695AB9E065A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E7A0D623A34B9C66304FFD1 /* FlashcardWeighting.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3F3693133AD274D5444DCB2E = {
@@ -70,6 +148,35 @@
 			);
 			sourceTree = "<group>";
 		};
+		66414DBD2B925D0702BAE508 /* AddTune */ = {
+			isa = PBXGroup;
+			children = (
+				982955CA7251580BA7F484D0 /* AddTuneView.swift */,
+				2BBEECD789E13A720FC98B69 /* RecordAudioView.swift */,
+				DA3E4BC3BB1B06721109A5B0 /* TuneMetadataFormView.swift */,
+			);
+			path = AddTune;
+			sourceTree = "<group>";
+		};
+		764F99542E3B56AFD4E348D1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				477F2739C5164ADB38C08D07 /* FilterPanelView.swift */,
+				E50EBB7824A5AAFB8123330C /* LibraryView.swift */,
+				3C541E81B0BFF2B4B45752D8 /* TuneRowView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		AAC6779AD81DF881CFF71B9A /* Flashcards */ = {
+			isa = PBXGroup;
+			children = (
+				7D99802A25E95F027158E21F /* FlashcardCardView.swift */,
+				44351D48D8D435B184444497 /* FlashcardsView.swift */,
+			);
+			path = Flashcards;
+			sourceTree = "<group>";
+		};
 		AF04D96BA8EBDD83341DFAA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +184,25 @@
 				F92F7608DE0F61EA43D0E775 /* FiddleTunesTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B887BDD395AAB6F8F272B756 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33FDFC3517AF62335DE6F19F /* Tune.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3AC5B73B7C7FCE7D60020C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66414DBD2B925D0702BAE508 /* AddTune */,
+				AAC6779AD81DF881CFF71B9A /* Flashcards */,
+				764F99542E3B56AFD4E348D1 /* Library */,
+				158DCDD42C65066966A9C659 /* Player */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E6EBF703E35BB36CC2627296 /* Frameworks */ = {
@@ -91,7 +217,11 @@
 		E923A811FA155EBD23F80544 /* FiddleTunesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F4A2D7FAB33D0EB639012629 /* AudioServiceWaveformTests.swift */,
 				43A053701D6D0F773E48B609 /* FiddleTunesTests.swift */,
+				ED709F64D033EEDD99EF9DD4 /* FlashcardWeightingTests.swift */,
+				8357314932D0CC2E6D0F0BD2 /* ImageGenerationServiceTests.swift */,
+				7AD6B7B4B023BBDF45F3ED01 /* KeychainServiceTests.swift */,
 			);
 			path = FiddleTunesTests;
 			sourceTree = "<group>";
@@ -174,8 +304,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E8906888AAE47526B11DB9 /* AddTuneView.swift in Sources */,
+				53DEC7883A50A3E3469ACD38 /* AudioService.swift in Sources */,
+				01E2FE40800E77580A347363 /* AudioService.swift in Sources */,
 				847D6FE0B6B345C763CC790C /* ContentView.swift in Sources */,
 				9374EC1935413ED1941446A8 /* FiddleTunesApp.swift in Sources */,
+				7CF0CC52676AEF3FFF9D05C6 /* FilterPanelView.swift in Sources */,
+				829465CEE6C0244E3BB15DC6 /* FlashcardCardView.swift in Sources */,
+				0FB937E23F0B2C3B298E91BC /* FlashcardWeighting.swift in Sources */,
+				7FDEAA40B8EA61DC87E96E98 /* FlashcardsView.swift in Sources */,
+				B176A3F011EB19103F7303AA /* ImageGenerationService.swift in Sources */,
+				CABD61BF6C077BF2B8ED793B /* KeychainService.swift in Sources */,
+				61C984D32DB2E4B6C53C5591 /* KeychainService.swift in Sources */,
+				2682AFA9A849B0BB9E73C00B /* LibraryView.swift in Sources */,
+				560F6AF35C9401EBEFAE2D4D /* RecordAudioView.swift in Sources */,
+				BB6FEC09CBD69BF06DDAA7CC /* Tune.swift in Sources */,
+				963A2B1BB9657DC98735F7D7 /* Tune.swift in Sources */,
+				D5D914C1AAC0201FF1706FFB /* TuneMetadataFormView.swift in Sources */,
+				F42348BBCC4DF9BBF8F80302 /* TunePlayerView.swift in Sources */,
+				73F407E59C854E001C0BF6F2 /* TuneRowView.swift in Sources */,
+				42B3137BA5C51D51C7946002 /* WaveformView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D5DCFACC6BE165A7495879 /* AudioServiceWaveformTests.swift in Sources */,
 				2601952DF7FE1B9B7E402EE5 /* FiddleTunesTests.swift in Sources */,
+				612F5F1609757338BD76C875 /* FlashcardWeightingTests.swift in Sources */,
+				4C8493E21228CDB54A10810C /* ImageGenerationServiceTests.swift in Sources */,
+				544BD836B66FBA58F647EF15 /* KeychainServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
