@@ -102,9 +102,3 @@ struct LibraryView: View {
         modelContext.delete(tune)
     }
 }
-
-// MARK: - Stub (replaced in Task 14)
-struct TunePlayerView: View {
-    let tune: Tune
-    var body: some View { Text(tune.title) }
-}
