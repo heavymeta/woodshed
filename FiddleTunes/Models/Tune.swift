@@ -4,7 +4,7 @@ import Foundation
 
 @Model
 final class Tune {
-    @Attribute(.unique) var id: UUID = UUID()
+    var id: UUID = UUID()
     var title: String
     var genre: String       // "Old Time" | "Scandi" | "Celtic"
     var type: String        // "Reel" | "Jig" | "Waltz" | "Breakdown" | "Hornpipe" | "Other"

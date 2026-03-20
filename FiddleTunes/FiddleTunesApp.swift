@@ -20,7 +20,7 @@ struct FiddleTunesApp: App {
             return container
         }
         do {
-            return try ModelContainer(for: schema, configurations: [ModelConfiguration(schema: schema)])
+            return try ModelContainer(for: schema, configurations: [ModelConfiguration(schema: schema, cloudKitDatabase: .none)])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
