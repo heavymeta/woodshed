@@ -23,6 +23,7 @@ struct FiddleTunesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AudioService.shared)
                 .onAppear { checkAPIKey() }
                 .alert("OpenAI API Key", isPresented: $showAPIKeyAlert) {
                     TextField("sk-...", text: $pendingAPIKey)
