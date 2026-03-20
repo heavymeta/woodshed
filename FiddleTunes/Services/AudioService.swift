@@ -152,6 +152,8 @@ final class AudioService: NSObject, ObservableObject {
     // MARK: - Import
 
     func importAudio(from sourceURL: URL) throws -> (filename: String, waveform: [Float]) {
+        let accessed = sourceURL.startAccessingSecurityScopedResource()
+        defer { if accessed { sourceURL.stopAccessingSecurityScopedResource() } }
         let filename = UUID().uuidString + "." + sourceURL.pathExtension
         let dest = documentsURL(for: filename)
         try FileManager.default.copyItem(at: sourceURL, to: dest)
