@@ -27,7 +27,9 @@ struct FiddleTunesApp: App {
                 .alert("OpenAI API Key", isPresented: $showAPIKeyAlert) {
                     TextField("sk-...", text: $pendingAPIKey)
                         .autocorrectionDisabled()
+                        #if os(iOS)
                         .textInputAutocapitalization(.never)
+                        #endif
                     Button("Save") {
                         KeychainService.save(key: "openai.api.key", value: pendingAPIKey)
                         pendingAPIKey = ""
