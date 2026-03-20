@@ -194,9 +194,9 @@ struct FlashcardsView: View {
     }
 
     private func rebuildDeck() {
-        let items = tunes.map { (id: Int(bitPattern: $0.id.hashValue), known: $0.knownCount, unknown: $0.unknownCount) }
+        let items = tunes.map { (id: $0.id.hashValue, known: $0.knownCount, unknown: $0.unknownCount) }
         let sorted = FlashcardWeighting.sort(items)
         let idOrder = sorted.map { $0.id }
-        deck = idOrder.compactMap { id in tunes.first { Int(bitPattern: $0.id.hashValue) == id } }
+        deck = idOrder.compactMap { id in tunes.first { $0.id.hashValue == id } }
     }
 }
