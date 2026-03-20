@@ -108,7 +108,10 @@ struct TunePlayerView: View {
                 Image(uiImage: uiImage)
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
+                    .grayscale(1.0)
+                    .overlay(Color("AppSecondary").opacity(0.18).blendMode(.multiply))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("AppOutlineVariant"), lineWidth: 1))
             } else {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color("AppSurfaceContainerHigh"))

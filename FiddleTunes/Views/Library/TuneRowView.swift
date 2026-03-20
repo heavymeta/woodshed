@@ -8,10 +8,11 @@ struct TuneRowView: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            // Index number
+            // Index number — italic serif per spec
             Text("\(index + 1)")
-                .font(.system(size: 18, weight: .bold, design: .serif))
-                .foregroundStyle(Color("AppPrimary"))
+                .font(.system(size: 17, weight: .regular, design: .serif))
+                .italic()
+                .foregroundStyle(Color("AppSecondary"))
                 .frame(width: 32, alignment: .trailing)
 
             // Title + subtitle

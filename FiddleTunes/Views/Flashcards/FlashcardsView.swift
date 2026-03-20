@@ -41,10 +41,12 @@ struct FlashcardsView: View {
         ZStack {
             ForEach(Array(deck.prefix(3).enumerated().reversed()), id: \.element.id) { index, tune in
                 if index > 0 {
+                    let rotations: [Double] = [0, -4.5, 3.0]
                     FlashcardCardView(tune: tune)
                         .scaleEffect(1.0 - CGFloat(index) * 0.04)
-                        .offset(y: CGFloat(index) * 8)
-                        .opacity(1.0 - Double(index) * 0.2)
+                        .rotationEffect(.degrees(rotations[index]))
+                        .offset(y: CGFloat(index) * 6)
+                        .opacity(1.0 - Double(index) * 0.15)
                 }
             }
             if let topTune = deck.first {

@@ -13,12 +13,19 @@ struct FlashcardCardView: View {
                     Image(uiImage: uiImage)
                         .resizable()
                         .scaledToFill()
+                        .grayscale(1.0)
+                        .overlay(Color("AppSecondary").opacity(0.15).blendMode(.multiply))
                 } else {
-                    Color("AppSurfaceContainer")
+                    Color("AppSurfaceContainerLow")
                         .overlay {
-                            Image(systemName: "photo")
-                                .font(.system(size: 48))
-                                .foregroundStyle(Color("AppOnSurfaceVariant"))
+                            VStack(spacing: 8) {
+                                Image(systemName: "paintbrush")
+                                    .font(.system(size: 36))
+                                    .foregroundStyle(Color("AppOnSurfaceVariant"))
+                                Text("No image yet")
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(Color("AppOnSurfaceVariant"))
+                            }
                         }
                 }
             }
