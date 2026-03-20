@@ -7,30 +7,23 @@ struct TuneRowView: View {
     @EnvironmentObject var audio: AudioService
 
     var body: some View {
-        HStack(spacing: 12) {
-            // Index number — italic serif per spec
-            Text("\(index + 1)")
-                .font(.system(size: 17, weight: .regular, design: .serif))
+        HStack(spacing: 16) {
+            // Zero-padded serif italic number (001, 002, …)
+            Text(String(format: "%03d", index + 1))
+                .font(.system(size: 14, weight: .regular, design: .serif))
                 .italic()
-                .foregroundStyle(Color("AppSecondary"))
-                .frame(width: 32, alignment: .trailing)
+                .foregroundStyle(Color("AppOnSurfaceVariant"))
+                .frame(width: 38, alignment: .trailing)
 
-            // Title + subtitle
-            VStack(alignment: .leading, spacing: 2) {
-                Text(tune.title)
-                    .font(.system(size: 16, weight: .bold, design: .serif))
-                    .foregroundStyle(Color("AppOnSurface"))
-                    .lineLimit(1)
-
-                Text([tune.type, tune.key, tune.tuning].joined(separator: " · "))
-                    .font(.system(size: 12))
-                    .foregroundStyle(Color("AppOnSurfaceVariant"))
-                    .lineLimit(1)
-            }
+            // Title
+            Text(tune.title)
+                .font(.system(size: 20, weight: .semibold, design: .serif))
+                .foregroundStyle(Color("AppOnSurface"))
+                .lineLimit(1)
 
             Spacer()
 
-            // Play/Stop button
+            // Simple triangle play button — no circle background
             Button {
                 if audio.isPlaying {
                     audio.stop()
@@ -39,22 +32,15 @@ struct TuneRowView: View {
                 }
             } label: {
                 Image(systemName: audio.isPlaying ? "stop.fill" : "play.fill")
-                    .font(.system(size: 16))
-                    .foregroundStyle(Color("AppPrimary"))
-                    .frame(width: 40, height: 40)
-                    .background(Color("AppPrimaryContainer"))
-                    .clipShape(Circle())
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color("AppOnSurface"))
             }
             .disabled(tune.audioFileName == nil)
-            .opacity(tune.audioFileName == nil ? 0.4 : 1.0)
+            .opacity(tune.audioFileName == nil ? 0.3 : 1.0)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
         .background(Color("AppSurface"))
-        .overlay(alignment: .bottom) {
-            Rectangle()
-                .fill(Color("AppOutlineVariant"))
-                .frame(height: 0.5)
-        }
+        // No divider — design system forbids lines; whitespace separates rows
     }
 }
