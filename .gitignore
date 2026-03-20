@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.xcuserstate
+xcuserdata/
+DerivedData/
+*.xccheckout
+*.moved-aside
+
+# Superpowers brainstorm sessions
+.superpowers/
+
+# Swift Package Manager
+.build/
+Packages/
+*.resolved
