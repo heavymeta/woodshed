@@ -7,6 +7,8 @@ import UIKit
 struct FiddleTunesApp: App {
     @State private var showAPIKeyAlert = false
     @State private var pendingAPIKey = ""
+    @State private var showOpenAIKeyAlert = false
+    @State private var pendingOpenAIKey = ""
 
     init() {
         applyAppearance()
@@ -36,29 +38,68 @@ struct FiddleTunesApp: App {
             ContentView()
                 .environmentObject(AudioService.shared)
                 .onAppear {
-                    checkAPIKey()
+                    SeedService.deduplicateTunes(context: sharedModelContainer.mainContext)
                     SeedService.seedIfNeeded(context: sharedModelContainer.mainContext)
+                    SeedService.repairAudioFileNames(context: sharedModelContainer.mainContext)
+                    CloudKitSeedService.downloadMissingAudio(container: sharedModelContainer)
+                    // Delay so the view is fully presented before showing alerts
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        checkAPIKey()
+                    }
                 }
-                .alert("OpenAI API Key", isPresented: $showAPIKeyAlert) {
-                    TextField("sk-...", text: $pendingAPIKey)
+                .alert("OpenAI API Key", isPresented: $showOpenAIKeyAlert) {
+                    TextField("sk-...", text: $pendingOpenAIKey)
                         .autocorrectionDisabled()
                         #if os(iOS)
                         .textInputAutocapitalization(.never)
                         #endif
                     Button("Save") {
-                        KeychainService.save(key: "openai.api.key", value: pendingAPIKey)
+                        KeychainService.save(key: MnemonicPromptService.keychainKey, value: pendingOpenAIKey.trimmingCharacters(in: .whitespacesAndNewlines))
+                        pendingOpenAIKey = ""
+                        if KeychainService.read(key: ImageGenerationService.keychainKey) == nil {
+                            showAPIKeyAlert = true
+                        }
+                    }
+                    Button("Cancel", role: .cancel) {}
+                } message: {
+                    Text("Paste your Claude API key to enable mnemonic scene generation.")
+                }
+                .alert("Fal.ai API Key", isPresented: $showAPIKeyAlert) {
+                    TextField("fal_key_...", text: $pendingAPIKey)
+                        .autocorrectionDisabled()
+                        #if os(iOS)
+                        .textInputAutocapitalization(.never)
+                        #endif
+                    Button("Save") {
+                        KeychainService.save(key: ImageGenerationService.keychainKey, value: pendingAPIKey.trimmingCharacters(in: .whitespacesAndNewlines))
                         pendingAPIKey = ""
                     }
                     Button("Cancel", role: .cancel) {}
                 } message: {
-                    Text("Paste your OpenAI API key to enable mnemonic image generation.")
+                    Text("Paste your fal.ai API key to enable mnemonic image generation.")
                 }
         }
         .modelContainer(sharedModelContainer)
     }
 
     private func checkAPIKey() {
-        if KeychainService.read(key: "openai.api.key") == nil {
+        // Remove stale keys from previous service migrations
+        KeychainService.delete(key: "openai.api.key")
+        KeychainService.delete(key: "anthropic.api.key")
+
+        // Trim any stored keys that have whitespace (fix for copy-paste artifacts)
+        if let key = KeychainService.read(key: MnemonicPromptService.keychainKey) {
+            let trimmed = key.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed != key { KeychainService.save(key: MnemonicPromptService.keychainKey, value: trimmed) }
+        }
+        if let key = KeychainService.read(key: ImageGenerationService.keychainKey) {
+            let trimmed = key.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed != key { KeychainService.save(key: ImageGenerationService.keychainKey, value: trimmed) }
+        }
+        // Show OpenAI alert first; it chains to fal.ai alert on save if needed
+        if KeychainService.read(key: MnemonicPromptService.keychainKey) == nil {
+            showOpenAIKeyAlert = true
+        } else if KeychainService.read(key: ImageGenerationService.keychainKey) == nil {
             showAPIKeyAlert = true
         }
     }

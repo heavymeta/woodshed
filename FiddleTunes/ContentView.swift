@@ -12,52 +12,70 @@ struct ContentView: View {
             TabView(selection: $selectedTab) {
                 LibraryView()
                     .tag(Tab.library)
-                    .tabItem {
-                        Label("Library", systemImage: "books.vertical")
-                    }
-
-                // Inert center slot so the FAB sits over the middle tab item
-                Color.clear
-                    .tag(Tab.library)
-                    .tabItem { Label("Add", systemImage: "plus") }
+                    .toolbar(.hidden, for: .tabBar)
 
                 FlashcardsView()
                     .tag(Tab.flashcards)
-                    .tabItem {
-                        Label("Flashcards", systemImage: "rectangle.on.rectangle")
-                    }
+                    .toolbar(.hidden, for: .tabBar)
             }
-            .tint(Color("AppPrimary"))
 
-            // Raised circular Add button
-            VStack(spacing: 4) {
-                Button {
-                    showAddTune = true
-                } label: {
-                    ZStack {
-                        Circle()
-                            .fill(Color("AppPrimary"))
-                            .frame(width: 60, height: 60)
-                            .shadow(
-                                color: Color("AppPrimary").opacity(0.4),
-                                radius: 10, y: 3
-                            )
-                        Image(systemName: "plus")
-                            .font(.system(size: 24, weight: .semibold))
-                            .foregroundStyle(.white)
-                    }
-                }
-                .offset(y: -8)
-
-                Text("Add")
-                    .font(.system(size: 10, weight: .medium))
-                    .foregroundStyle(Color("AppOnSurfaceVariant"))
-                    .offset(y: -2)
-            }
-            .padding(.bottom, 4)
+            customTabBar
         }
         .sheet(isPresented: $showAddTune) {
             AddTuneView()
         }
+    }
+
+    // MARK: - Custom Tab Bar
+
+    private var customTabBar: some View {
+        HStack(spacing: 0) {
+            tabButton(title: "Library", systemImage: "books.vertical", tab: .library)
+
+            // FAB — center
+            Button {
+                showAddTune = true
+            } label: {
+                ZStack {
+                    Circle()
+                        .fill(Color("AppPrimary"))
+                        .frame(width: 52, height: 52)
+                        .shadow(color: Color("AppPrimary").opacity(0.35), radius: 8, y: 2)
+                    Image(systemName: "plus")
+                        .font(.system(size: 22, weight: .semibold))
+                        .foregroundStyle(.white)
+                }
+            }
+            .frame(width: 80)
+
+            tabButton(title: "Flashcards", systemImage: "rectangle.on.rectangle", tab: .flashcards)
+        }
+        .padding(.horizontal, 24)
+        .frame(height: 56)
+        .background(
+            Color("AppSurface")
+                .shadow(color: .black.opacity(0.08), radius: 6, y: -1)
+                .ignoresSafeArea(edges: .bottom)
+        )
+    }
+
+    private func tabButton(title: String, systemImage: String, tab: Tab) -> some View {
+        Button {
+            selectedTab = tab
+        } label: {
+            VStack(spacing: 3) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 22))
+                Text(title)
+                    .font(.system(size: 10, weight: .medium))
+            }
+            .padding(.top, 6)
+            .foregroundStyle(
+                selectedTab == tab
+                    ? Color("AppPrimary")
+                    : Color("AppOnSurfaceVariant").opacity(0.45)
+            )
+        }
+        .frame(maxWidth: .infinity)
     }
 }

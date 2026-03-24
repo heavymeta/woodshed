@@ -5,14 +5,14 @@ import Foundation
 @Model
 final class Tune {
     var id: UUID = UUID()
-    var title: String
-    var genre: String       // "Old Time" | "Scandi" | "Celtic"
-    var type: String        // "Reel" | "Jig" | "Waltz" | "Breakdown" | "Hornpipe" | "Other"
-    var key: String         // e.g. "D Major", "G Major", "A minor"
-    var tuning: String      // "Standard" | "Cross-G" | "AEAE" | "Other"
+    var title: String = ""
+    var genre: String = "Other"       // "Old Time" | "Scandi" | "Celtic"
+    var type: String = "Other"        // "Reel" | "Jig" | "Waltz" | "Breakdown" | "Hornpipe" | "Other"
+    var key: String = "Other"         // e.g. "D Major", "G Major", "A minor"
+    var tuning: String = "Standard"   // "Standard" | "Cross-G" | "AEAE" | "Other"
     var audioFileName: String?
     @Attribute(.externalStorage) var mnemonicImageData: Data?
-    var mnemonicPrompt: String
+    var mnemonicPrompt: String = ""
     var waveformSamples: [Float] = []
     var knownCount: Int = 0
     var unknownCount: Int = 0

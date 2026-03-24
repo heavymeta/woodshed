@@ -5,31 +5,35 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "1814_Slow.m4a"
   },
   {
     "title": "Barsebek",
     "genre": "Scandi",
     "type": "Other",
-    "key": "Other",
+    "key": "E Minor",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Barsebek.m4a"
   },
   {
     "title": "Da Slockit Light",
     "genre": "Scandi",
     "type": "Other",
-    "key": "Other",
+    "key": "D Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_1.m4a"
   },
   {
     "title": "Dry and Dusty",
     "genre": "Old Time",
     "type": "Other",
-    "key": "Other",
+    "key": "D Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Dry_and_Dusty.m4a"
   },
   {
     "title": "Epigen",
@@ -37,7 +41,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Epigen.m4a"
   },
   {
     "title": "Fly and the Dodger",
@@ -45,7 +50,17 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Fly_and_the_Dodger.m4a"
+  },
+  {
+    "title": "22nd St 22",
+    "genre": "Scandi",
+    "type": "Other",
+    "key": "Other",
+    "tuning": "Standard",
+    "mnemonicPrompt": "",
+    "audioFileName": "22nd_St_22.m4a"
   },
   {
     "title": "Friday Tune",
@@ -53,7 +68,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Gaza Remsan",
@@ -61,7 +77,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Gaza_Remsan.m4a"
   },
   {
     "title": "Girl would dance",
@@ -69,15 +86,17 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Girl_would_dance.m4a"
   },
   {
     "title": "Hawk is a Mule",
     "genre": "Old Time",
     "type": "Other",
-    "key": "Other",
+    "key": "D Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_2.m4a"
   },
   {
     "title": "High Drive",
@@ -85,7 +104,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_3.m4a"
   },
   {
     "title": "Homburg",
@@ -93,7 +113,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Homburg.m4a"
   },
   {
     "title": "Hut on Steffen Island",
@@ -101,7 +122,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Hut_on_Steffen_Islands.m4a"
   },
   {
     "title": "I am not fed up with the Pacific Ocean",
@@ -109,15 +131,17 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "I_am_not_fed_up.m4a"
   },
   {
     "title": "Kerfunten",
     "genre": "Scandi",
     "type": "Other",
-    "key": "Other",
+    "key": "G Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_4.m4a"
   },
   {
     "title": "Kungen",
@@ -125,7 +149,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Kungen.m4a"
   },
   {
     "title": "Kvekfanten",
@@ -133,23 +158,26 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Kvekfanten.m4a"
   },
   {
     "title": "Longford Collector",
     "genre": "Celtic",
     "type": "Other",
-    "key": "Other",
+    "key": "G Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Longford_Collector.mp3"
   },
   {
     "title": "Otter's Holt",
     "genre": "Celtic",
     "type": "Other",
-    "key": "Other",
+    "key": "B Minor",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_5.m4a"
   },
   {
     "title": "Polska efter Lars August Bengtsson",
@@ -157,39 +185,44 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Polska_Lars_Bengtsson.m4a"
   },
   {
     "title": "Rackelhanen - Ranarim",
     "genre": "Scandi",
     "type": "Other",
-    "key": "Other",
+    "key": "A Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Rackelhanen.m4a"
   },
   {
     "title": "Rakish Paddy",
     "genre": "Celtic",
     "type": "Other",
-    "key": "Other",
+    "key": "A Minor",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "RakishPaddy.mp3"
   },
   {
     "title": "Sansonette",
     "genre": "Scandi",
     "type": "Other",
-    "key": "Other",
+    "key": "D Minor",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Sansonette.m4a"
   },
   {
     "title": "Sunday's well",
     "genre": "Celtic",
     "type": "Other",
-    "key": "Other",
+    "key": "A Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_6.m4a"
   },
   {
     "title": "Svangrümpa",
@@ -197,7 +230,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Svangrumpa.m4a"
   },
   {
     "title": "The Joy of It",
@@ -205,7 +239,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_7.m4a"
   },
   {
     "title": "The Mam",
@@ -213,7 +248,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "The_Mam.m4a"
   },
   {
     "title": "Tuning tune",
@@ -221,7 +257,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Valhalla",
@@ -229,7 +266,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "Valhalla.m4a"
   },
   {
     "title": "Yarra Wine Valley",
@@ -237,7 +275,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": "recording_8.m4a"
   },
   {
     "title": "April and Joe's",
@@ -245,7 +284,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Trip to Singles",
@@ -253,15 +293,17 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Slang Polska Vringstad",
     "genre": "Scandi",
     "type": "Other",
-    "key": "Other",
+    "key": "D Major",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Supleken",
@@ -269,7 +311,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Fontelaura",
@@ -277,7 +320,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Årepolska",
@@ -285,7 +329,8 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   },
   {
     "title": "Lost in the loop",
@@ -293,6 +338,7 @@
     "type": "Other",
     "key": "Other",
     "tuning": "Standard",
-    "mnemonicPrompt": ""
+    "mnemonicPrompt": "",
+    "audioFileName": null
   }
 ]

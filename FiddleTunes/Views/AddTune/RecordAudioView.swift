@@ -98,8 +98,9 @@ struct RecordAudioView: View {
 
             // Animated placeholder waveform
             WaveformView(
-                samples: Array(repeating: Float.random(in: 0.2...0.8), count: 50),
-                barColor: Color.red.opacity(0.6)
+                flatSamples: Array(repeating: Float(0.02), count: 50),
+                realSamples: Array(repeating: Float.random(in: 0.2...0.8), count: 50),
+                waveProgress: 1
             )
             .frame(height: 50)
         }
@@ -109,8 +110,12 @@ struct RecordAudioView: View {
 
     private var recordedView: some View {
         VStack(spacing: 20) {
-            WaveformView(samples: capturedWaveform)
-                .frame(height: 60)
+            WaveformView(
+                flatSamples: Array(repeating: Float(0.02), count: 50),
+                realSamples: capturedWaveform.isEmpty ? Array(repeating: Float(0.02), count: 50) : capturedWaveform,
+                waveProgress: 1
+            )
+            .frame(height: 60)
 
             HStack(spacing: 16) {
                 Button("Re-record") {

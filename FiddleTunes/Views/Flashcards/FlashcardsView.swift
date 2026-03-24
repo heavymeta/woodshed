@@ -9,6 +9,9 @@ struct FlashcardsView: View {
 
     @State private var deck: [Tune] = []
     @State private var dragOffset: CGSize = .zero
+    /// 0 = cards at rest, 1 = next card fully risen to top position.
+    /// Driven continuously by drag, then completed on swipe commit.
+    @State private var riseProgress: CGFloat = 0
 
     var body: some View {
         NavigationStack {
@@ -20,63 +23,78 @@ struct FlashcardsView: View {
                 } else if deck.isEmpty {
                     allDoneState
                 } else {
-                    VStack(spacing: 0) {
-                        Spacer()
-                        cardStack
-                        Spacer()
-                        actionButtons
-                            .padding(.bottom, 32)
+                    GeometryReader { geo in
+                        let cardWidth  = geo.size.width - 56
+                        let cardHeight = geo.size.height * 0.72
+                        VStack(spacing: 0) {
+                            Spacer()
+                            cardStack(width: cardWidth, height: cardHeight)
+                                .offset(y: -20)
+                            Spacer()
+                        }
+                        .frame(maxWidth: .infinity)
                     }
                 }
             }
-            .navigationTitle("Flashcards")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
             .onAppear { rebuildDeck() }
         }
     }
 
     // MARK: - Card Stack
 
-    private var cardStack: some View {
+    private func cardStack(width: CGFloat, height: CGFloat) -> some View {
         ZStack {
             ForEach(Array(deck.prefix(3).enumerated().reversed()), id: \.element.id) { index, tune in
-                if index > 0 {
-                    let rotations: [Double] = [0, -4.5, 3.0]
-                    FlashcardCardView(tune: tune)
-                        .scaleEffect(1.0 - CGFloat(index) * 0.04)
-                        .rotationEffect(.degrees(rotations[index]))
-                        .offset(y: CGFloat(index) * 6)
-                        .opacity(1.0 - Double(index) * 0.15)
-                }
-            }
-            if let topTune = deck.first {
-                topCard(topTune)
+                singleCard(tune: tune, index: index, width: width, height: height)
             }
         }
-        .padding(.horizontal, 24)
     }
 
-    private func topCard(_ tune: Tune) -> some View {
-        let rotation = dragOffset.width / 20.0
+    /// Renders every card — top and background — through the same view path so SwiftUI
+    /// preserves view identity across swipes instead of destroying and recreating views.
+    private func singleCard(tune: Tune, index: Int, width: CGFloat, height: CGFloat) -> some View {
+        let isTop     = index == 0
+        let rotations: [Double] = [0, -4.0, 5.5]
+        let rise: CGFloat = index == 1 ? riseProgress : (index == 2 ? riseProgress * 0.5 : 0)
 
-        return FlashcardCardView(tune: tune)
-            .overlay(swipeLabel)
+        let scale      = isTop ? 1.0 : 1.0 - CGFloat(index) * 0.06 + 0.06 * rise
+        let rotation   = isTop ? Double(dragOffset.width) / 20.0 : rotations[index] * Double(1.0 - rise)
+        let cardOffset = isTop ? dragOffset : CGSize(width: 0, height: CGFloat(index) * 14 * (1.0 - rise))
+        let opacity    = isTop ? 1.0 : 1.0 - Double(index) * 0.12 + 0.12 * Double(rise)
+
+        return FlashcardCardView(tune: tune, index: cardNumber(for: tune))
+            .frame(width: width, height: height)
+            .overlay { if isTop { swipeLabel } }
+            .scaleEffect(scale)
             .rotationEffect(.degrees(rotation))
-            .offset(dragOffset)
+            .offset(cardOffset)
+            .opacity(opacity)
+            .zIndex(Double(3 - index))
+            .allowsHitTesting(isTop)
             .gesture(
                 DragGesture()
-                    .onChanged { value in dragOffset = value.translation }
+                    .onChanged { value in
+                        dragOffset = value.translation
+                        riseProgress = min(abs(value.translation.width) / 80.0, 1.0)
+                    }
                     .onEnded { value in
                         if value.translation.width > 80 {
                             swipe(tune: tune, known: true)
                         } else if value.translation.width < -80 {
                             swipe(tune: tune, known: false)
                         } else {
-                            withAnimation(.spring()) { dragOffset = .zero }
+                            withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
+                                dragOffset = .zero
+                                riseProgress = 0
+                            }
                         }
                     }
             )
-            .animation(.interactiveSpring(), value: dragOffset)
+    }
+
+    private func cardNumber(for tune: Tune) -> Int {
+        (tunes.firstIndex(where: { $0.id == tune.id }) ?? 0) + 1
     }
 
     @ViewBuilder
@@ -115,30 +133,28 @@ struct FlashcardsView: View {
     // MARK: - Action Buttons
 
     private var actionButtons: some View {
-        HStack(spacing: 48) {
+        HStack(spacing: 32) {
             Button {
                 if let tune = deck.first { swipe(tune: tune, known: false) }
             } label: {
-                VStack(spacing: 4) {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 44))
-                        .foregroundStyle(.red)
-                    Text("Don't Know")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color("AppOnSurfaceVariant"))
+                VStack(spacing: 6) {
+                    ZStack {
+                        Circle().fill(.red).frame(width: 56, height: 56)
+                        Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundStyle(.white)
+                    }
+                    Text("Don't Know").font(.system(size: 12)).foregroundStyle(Color("AppOnSurfaceVariant"))
                 }
             }
 
             Button {
                 if let tune = deck.first { swipe(tune: tune, known: true) }
             } label: {
-                VStack(spacing: 4) {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 44))
-                        .foregroundStyle(.green)
-                    Text("Know It")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color("AppOnSurfaceVariant"))
+                VStack(spacing: 6) {
+                    ZStack {
+                        Circle().fill(.green).frame(width: 56, height: 56)
+                        Image(systemName: "checkmark").font(.system(size: 22, weight: .semibold)).foregroundStyle(.white)
+                    }
+                    Text("Know It").font(.system(size: 12)).foregroundStyle(Color("AppOnSurfaceVariant"))
                 }
             }
         }
@@ -181,17 +197,26 @@ struct FlashcardsView: View {
 
     private func swipe(tune: Tune, known: Bool) {
         audio.stop()
-        if known {
-            tune.knownCount += 1
-        } else {
-            tune.unknownCount += 1
+        if known { tune.knownCount += 1 } else { tune.unknownCount += 1 }
+
+        let exitX: CGFloat = known ? 650 : -650
+        let exitY = dragOffset.height - 30
+
+        // Complete the background rise while the top card exits.
+        withAnimation(.easeOut(duration: 0.22)) { riseProgress = 1.0 }
+        withAnimation(.easeOut(duration: 0.25)) {
+            dragOffset = CGSize(width: exitX, height: exitY)
         }
-        withAnimation(.easeInOut(duration: 0.25)) {
-            dragOffset = CGSize(width: known ? 500 : -500, height: 0)
-        }
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            // Batch deck removal + dragOffset reset in one render pass so the
+            // exiting card is never seen snapping back to center.
             deck.removeFirst()
             dragOffset = .zero
+            // Animate the third card drifting back to its rest position.
+            withAnimation(.spring(response: 0.45, dampingFraction: 0.9)) {
+                riseProgress = 0
+            }
         }
     }
 

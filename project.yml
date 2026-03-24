@@ -13,10 +13,6 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: FiddleTunes
-        excludes:
-          - Resources/**
-    resources:
-      - path: FiddleTunes/Resources
     info:
       path: FiddleTunes/Info.plist
       properties:
